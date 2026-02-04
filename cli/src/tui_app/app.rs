@@ -61,11 +61,22 @@ impl App {
 
     /// Process an incoming message, updating the app state appropriately.
     pub(crate) async fn update(&mut self, msg: Message) -> Option<Message> {
-        todo!()
+        match msg {
+            Message::Quit => {
+                self.state = State::Exit;
+                None
+            }
+        }
     }
 
     /// Render the TUI according to the current state
     pub(crate) fn view(&self, frame: &mut Frame) {
-        todo!()
+        match &self.state {
+            State::Initial => {
+                frame.render_widget("spinning up (<q> or <esc> to quit)", frame.area())
+            }
+            State::ListSelect(hash_map) => todo!(),
+            State::Exit => unreachable!("app should always exit prior to rendering this"),
+        }
     }
 }
