@@ -14,3 +14,5 @@ How far can we get writing a TODO application that works both on the command lin
     - [`Rows`](https://docs.rs/turso/0.4.4/turso/struct.Rows.html) has an annoyingly manual interface: just `async fn next`, no iterator or map combinators
     - Can't get a value by column name, only by column index
     - `query_row` returns no error if more than one row is returned
+3. Encryption is a planned feature, but it's experimental for now at least.
+4. Builder feels underbaked: path argument is `&str` not `impl AsRef<Path>`.
