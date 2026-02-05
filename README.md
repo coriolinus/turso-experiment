@@ -21,3 +21,5 @@ How far can we get writing a TODO application that works both on the command lin
         - Though that might have been an sql error anyway
 6. Ultimately in the native context it appears to work, at least for simple cases.
     I would not yet call it ready for prime time in this context due to its various rough edges, but there's clear and substantial progress since last we looked at it.
+7. Some features don't fail but also don't work:
+    - `ON DELETE CASCADE` doesn't cascade.
