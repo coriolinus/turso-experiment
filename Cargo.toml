@@ -1,3 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["cli","todo-list"]
+members = ["cli", "ffi", "todo-list"]
+
+[profile.release]
+lto = true

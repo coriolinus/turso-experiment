@@ -27,6 +27,20 @@ Options:
           Print help (see a summary with '-h')
 ```
 
+### WASM
+
+#### Setup
+
+- `rustup target add wasm32-unknown-unknown`
+- install `wasm-bindgen-cli`
+
+#### Build
+
+```sh
+wasm-pack build ffi
+```
+
+
 ## Notes and Findings
 
 1. Migrations are a pain and we may have to write our own migration framework
