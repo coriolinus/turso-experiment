@@ -71,3 +71,8 @@ wasm-pack build ffi
     - Key derivation is not implemented.
     - As this is all currently experimental, there have been no security audits; high chance of some surprising implementation problems showing up.
     - Overall this feature is not production-ready.
+9. Turso cannot currently be embedded into a Rust binary which is then compiled for WASM. 
+    - See [tursodatabase/turso#5049](https://github.com/tursodatabase/turso/issues/5049).
+    - There are explicit pointer-width checks which prevent compilation to any non-64-bit target. 
+    - They've bypassed those somehow, sufficiently to offer the DB as a separate package with JS bindings
+    - But we're really committed to the embedded use case.
