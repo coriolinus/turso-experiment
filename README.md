@@ -48,3 +48,12 @@ Options:
     I would not yet call it ready for prime time in this context due to its various rough edges, but there's clear and substantial progress since last we looked at it.
 7. Some features don't fail but also don't work:
     - `ON DELETE CASCADE` doesn't cascade.
+8. Database encryption is underbaked
+    - For example, [`EncryptionOpts`](https://docs.rs/turso/latest/turso/type.EncryptionOpts.html) fundamentally configure encryption:
+        - `cipher` is a magic string where it should be an enum
+        - `hexkey` needs to be `[u8; 32]` or equivalent but in fact is a runtime-checked hex-encoded string
+        - nothing is documented
+    - Key rotation is not implemented.
+    - Key derivation is not implemented.
+    - As this is all currently experimental, there have been no security audits; high chance of some surprising implementation problems showing up.
+    - Overall this feature is not production-ready.
